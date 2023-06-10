@@ -4,7 +4,7 @@ import './App.css';
 import Header1 from "./component/header/header.jsx"
 import Login from "./component/login/login.jsx"
 import SignUp from "./component/signup/signUp.jsx"
-import Dashboard from "./component/dashboard/main.jsx"
+
 import Try from "./component/try/main.jsx"
 
 
@@ -30,7 +30,7 @@ const alertFun=(x)=>{
 <Route path="/login/*" element={<Login/>} />
 <Route path="/signUp" element={<SignUp/>} />
 <Route path="/try" element={<Try/>} />
-{/* <Route path="/dashboard" element={<Dashboard/>} /> */}
+
 
     </Routes>
 

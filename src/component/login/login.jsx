@@ -3,7 +3,7 @@ import "./login.css"
 import { useState } from "react"
 import axios from 'axios';
 import {Routes,Route,redirect,useNavigate,Navigate} from "react-router-dom"
-import Dashboard from "../dashboard/main.jsx";
+
 
 
 function App() {
@@ -20,8 +20,16 @@ function App() {
             })
             console.log(resp2)
             // alert(resp2.data.message)
-            setResposne(resp2.data.message)
+            
             alert("redirect to dashboard")
+
+           const respObject=resp2.data
+//setting jwt key in
+const jwtKey=respObject.jwtKey;
+localStorage.setItem("jwtKey",jwtKey)
+localStorage.setItem("user_name",respObject.user_name)
+console.log(jwtKey)
+
         if(resp2.data.status){
       
             navigate("/dashboard")
