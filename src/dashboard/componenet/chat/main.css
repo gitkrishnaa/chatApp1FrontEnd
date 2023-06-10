@@ -50,10 +50,12 @@ width: 70%;
 height: 80%;
 font-size: 25px;
 padding-left: 10px;
-
+border-radius: 10px;
 }
 .chat_btn1{
     display: block;
     width: 20%;
     height: 80%;
+    border-radius: 10px;
+    margin: 2px;
 }
