@@ -14,7 +14,7 @@ root.render(
     <BrowserRouter>
     <Routes>
 <Route exact path="/home/*" element={<App />} />
-<Route path="/dashboard" element={<Dashboard />} />
+<Route path="/dashboard/*" element={<Dashboard />} />
 
   </Routes>
   {/* <App/> */}
