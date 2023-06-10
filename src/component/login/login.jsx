@@ -2,10 +2,16 @@
 import "./login.css"
 import { useState } from "react"
 import axios from 'axios';
+import {Routes,Route,redirect,useNavigate,Navigate} from "react-router-dom"
+import Dashboard from "../dashboard/main.jsx";
+
+
 function App() {
+    const navigate=useNavigate()
     const [email,setEmail]=useState("a@b.c")
     const [password,setPassword]=useState("123")
-        const submitFun=async()=>{
+    const [response,setResposne]=useState("message")
+        const SubmitFun=async()=>{
        
             try {
             const resp2= await axios.post("http://localhost:4000/user/login",{
@@ -13,7 +19,21 @@ function App() {
             user_password:password,  
             })
             console.log(resp2)
-            alert(resp2.data.message)
+            // alert(resp2.data.message)
+            setResposne(resp2.data.message)
+            alert("redirect to dashboard")
+        if(resp2.data.status){
+      
+            navigate("/dashboard")
+
+            //not worked
+            // <Navigate to="/dashboard" replace={true} />
+            // <redirect to="dashboard"/>
+          
+        }
+
+
+
         }
      catch (error) {
         alert("front end error ,see in console")
@@ -23,19 +43,20 @@ function App() {
     return (
 <div className="div_main">
 <div className="div1">
-   
+   <h4>{response}</h4>
    
     <div  className="input_div"> <input type="text"  placeholder="Email" value={email} onChange={(e)=>{
 setEmail(e.target.value)
     }}/>  </div>
 
     <div className="input_div"> <input type="password" placeholder="Password"  value={password} onChange={(e)=>{
-password(e.target.value)}}/>  </div>
+setPassword(e.target.value)}}/>  </div>
     
 <div className="input_div">
-    <button className="button1" onClick={submitFun}> submit</button>
+    <button className="button1" onClick={SubmitFun}> submit</button>
     </div>
 </div>
+
 </div>
 
     )

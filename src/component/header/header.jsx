@@ -9,9 +9,9 @@ function App(props) {
         <h1>ChatApp</h1>
       </div>
       <div className="menu">
-        <div><Link to="/">Home</Link> </div>
-        <div><Link to="/about">About</Link> </div>
-        <div><Link to="/contact">Contact</Link> </div>
+        <div><Link to="">Home</Link> </div>
+        <div><Link to="about">About</Link> </div>
+        <div><Link to="contact">Contact</Link> </div>
       </div>
       <div className="login">
         <div ><Link to="login">
@@ -19,7 +19,7 @@ function App(props) {
             login</button>
           </Link>
         </div>
-        <div ><Link to="SignUp">
+        <div ><Link to="signUp">
           <button className="login_btn">
             sign Up</button>
           </Link>
